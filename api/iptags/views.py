@@ -10,10 +10,9 @@ class IpTagView(APIView):
     def get(self, request, ip):
         try:
             ip_tags = IpTag.objects.filter(ip_network=ip)
-            tags = []
-            for tag in ip_tags:
-                tags.extend(tag.tag.split(","))
-            return JsonResponse(tags, safe=False)
+            serializer = IPTagSerializer(ip_tags, many=True)
+            flat_tags = [item for sublist in serializer.data for item in sublist]  # Spłaszcz listę
+            return JsonResponse(flat_tags, safe=False)
         except IpTag.DoesNotExist:
             return JsonResponse([], safe=False)
 

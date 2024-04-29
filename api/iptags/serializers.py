@@ -7,3 +7,7 @@ class IPTagSerializer(serializers.ModelSerializer):
     class Meta:
         model = IpTag
         fields = ['tag']
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        return representation['tag'].split(", ")
