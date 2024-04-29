@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from .models import IpTag
+from .serializers import IPTagSerializer
+
+
+class IPTagsListView(generics.RetrieveAPIView):
+    queryset = IpTag.objects.all()
+    serializer_class = IPTagSerializer
