@@ -25,7 +25,6 @@ Baza wiedzy – po odczytaniu i deserializacji – jest listą (obiektem typu li
 * drf
 * pytest
 * docker
-* gunicorn
 
 ## Uruchomienie projektu
 1. Klonujemy projekt:
@@ -58,7 +57,8 @@ DB_CONNECTION_STRING=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES
 ```bash
 docker compose up
 ```
-Serwis wystartuje pod adresem 127.0.0.1:8000
+Uwaga — serwis przy starcie zasila bazę danych z bazy wiedzy, może to potrwać do kilku minut.
+Serwis wystartuje pod adresem 127.0.0.1:8000.
 
 ## Testy jednostkowe
 Uruchomienie testów jest możliwe tylko po wystartowaniu projektu.
