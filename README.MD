@@ -30,7 +30,7 @@ Baza wiedzy – po odczytaniu i deserializacji – jest listą (obiektem typu li
 1. Klonujemy projekt:
 
 ```bash
-git@github.com:BlazejBielski/nask_api.git
+git@github.com:BlazejBielski/ip_management.git
 ```
 2. Przechodzimy do katalogu z projektem.
 3. Kopiujemy pliki z katalogu envs nadając im odpowiednio nazwy:
