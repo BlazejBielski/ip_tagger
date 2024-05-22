@@ -1,5 +1,9 @@
 venv
 
 .idea
+.vscode
+.DStore
+
 **/*.pyc
 api/db.sqlite3
+api/db.sqlite3-journal
