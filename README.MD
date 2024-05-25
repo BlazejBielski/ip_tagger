@@ -1,4 +1,4 @@
-# NASK API
+# IP Management
 
 ## Główne wymagania funkcjonalne.
 Utworzenie API dla dwóch endpointów:
