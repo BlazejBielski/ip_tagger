@@ -24,6 +24,8 @@ Baza wiedzy – po odczytaniu i deserializacji – jest listą (obiektem typu li
 * django
 * drf
 * pytest
+* django template
+* HTML
 * docker
 
 ## Uruchomienie projektu
