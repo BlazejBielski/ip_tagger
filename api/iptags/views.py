@@ -33,10 +33,6 @@ class IPTagListView(ListAPIView):
     queryset = IpTag.objects.all()
     pagination_class = CustomPagination
 
-    def get_queryset(self):
-        qs = IpTag.objects.all()
-        return qs
-
 
 class IPTagCreateView(CreateAPIView):
     serializer_class = IPTagSerializer
