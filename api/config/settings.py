@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third part packages
     'rest_framework',
+    'drf_spectacular',
     # internal apps
     'iptags.apps.IptagsConfig',
 ]
