@@ -4,7 +4,7 @@ from .models import IpTag
 
 
 class IPTagSerializer(serializers.ModelSerializer):
-    """Serializer for IpTag model.
+    """Serializer for tags from IpTag model.
 
     :returns: IPTagSerializer
     :rtype: rest_framework.serializers.Serializer
@@ -21,3 +21,15 @@ class IPTagSerializer(serializers.ModelSerializer):
         """
         representation = super().to_representation(instance)
         return representation['tag'].split(", ")
+
+
+class IPNetworkTagSerializer(serializers.ModelSerializer):
+    """Serializer for IpTag model with IP and tags.
+
+    :returns: IPTagSerializer
+    :rtype: rest_framework.serializers.Serializer
+
+    """
+    class Meta:
+        model = IpTag
+        fields = ['id', 'ip_network', 'tag']

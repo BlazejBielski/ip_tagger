@@ -1,12 +1,11 @@
 from django.http import JsonResponse
 from rest_framework import status
 from rest_framework.generics import ListAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
-from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import IpTag
 from .pagination import CustomPagination
-from .serializers import IPTagSerializer
+from .serializers import IPTagSerializer, IPNetworkTagSerializer
 from django.shortcuts import render
 
 
@@ -29,7 +28,7 @@ class IPTagRetrieveAPIView(APIView):
 
 
 class IPTagListView(ListAPIView):
-    serializer_class = IPTagSerializer
+    serializer_class = IPNetworkTagSerializer
     queryset = IpTag.objects.all()
     pagination_class = CustomPagination
 
