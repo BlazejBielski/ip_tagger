@@ -7,6 +7,10 @@ from django.db import transaction
 
 
 class Command(BaseCommand):
+    """Class for import data from knowledge base
+
+    """
+
     help = 'Load data into the database'
 
     def handle(self, *args, **options):
