@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third part packages
     'rest_framework',
-    'drf_spectacular',
     # internal apps
     'iptags.apps.IptagsConfig',
 ]
@@ -169,16 +168,7 @@ logging.config.dictConfig({
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 25,
-    'DEFAULT_SCHEMA_CLASS': [
-        'drf_spectacular.openapi.AutoSchema',
-    ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
-}
-
-SPECTACULAR_SETTINGS = {
-    'TITLE': 'IP-Tagger',
-    'DESCRIPTION': 'MVP',
-    'VERSION': '1.0.0',
 }

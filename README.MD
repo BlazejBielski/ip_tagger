@@ -32,8 +32,8 @@ Baza wiedzy – po odczytaniu i deserializacji – jest listą (obiektem typu li
 * HTML
 * docker
 
-## Dokumentacja projektu
-
+## Diagram klas
+![Diagram klas](diagram_klas.png)
 ## Uruchomienie projektu
 1. Klonujemy projekt:
 
