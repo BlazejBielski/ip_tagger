@@ -1,0 +1,29 @@
+{% extends "navbar.html" %}
+
+{% block title %}IP Tag Report{% endblock %}
+
+{% block content %}
+<h2 class="mt-4">IP Tag Report for {{ ip }}</h2>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">IP Address</th>
+            <th scope="col">Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ ip }}</td>
+            <td>
+                {% if tags %}
+                    {% for tag in tags %}
+                        <span class="badge badge-primary">{{ tag }}</span>
+                    {% endfor %}
+                {% else %}
+                    <span>No tags found.</span>
+                {% endif %}
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

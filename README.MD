@@ -10,6 +10,7 @@ Ten endpoint, w odpowiedzi na żądanie klienta, powinien zwracać dokument w fo
 zawierający tabelę prezentującą tagi, które odpowiadają danemu adresowi IP – np.:
 Adres IP Pasujące tagi
 198.51.100.227 just a TAG
+3. Utworzenie API do obsługi Create, Read, Update, Destroy
 
 ## Baza wiedzy i logika dopasowywania tagów do adresów IP.
 Baza wiedzy powinna zostać odczytana podczas inicjalizacji usługi z pliku w formacie JSON. Ścieżkę do
@@ -19,6 +20,9 @@ Baza wiedzy – po odczytaniu i deserializacji – jest listą (obiektem typu li
 (obiekty typu dict). Każdy z tych słowników ma następującą strukturę:
 {"tag": WARTOŚĆ, "ip_network": WARTOŚĆ}
 
+## Warstwa reprezentacyjna
+
+
 ## Użyty stack technologiczny.
 * python
 * django
@@ -27,6 +31,8 @@ Baza wiedzy – po odczytaniu i deserializacji – jest listą (obiektem typu li
 * django template
 * HTML
 * docker
+
+## Dokumentacja projektu
 
 ## Uruchomienie projektu
 1. Klonujemy projekt:
@@ -38,7 +44,7 @@ git@github.com:BlazejBielski/ip_management.git
 3. Kopiujemy pliki z katalogu envs nadając im odpowiednio nazwy:
 - backend.env
 - postgres.env
-4. Przykładowe uzupełenienie plików env:
+4. Przykładowe uzupełnienie plików env:
 ```
 DJ_SECRET_KEY="django-insecure-ih$-8kb2(_49%8t=+o^s$n=0rvpqci0d-8hgui&-phzslfi4y5"
 DJ_DEBUG=1
@@ -54,7 +60,7 @@ POSTGRES_PORT=5432
 
 DB_CONNECTION_STRING=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
 ```
-3. Uruchamiamy projekt.
+5. Uruchamiamy projekt.
 
 ```bash
 docker compose up

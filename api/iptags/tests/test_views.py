@@ -34,8 +34,8 @@ def test_ip_tag_view_performance():
 def test_ip_tag_view_with_existing_ip():
 
     ip_tag = IpTag.objects.create(tag="Test Tag", ip_network="192.0.2.1")
-    expected_url = reverse('iptags:ip-tags', kwargs={'ip': ip_tag.ip_network})
-    url = reverse('iptags:ip-tags', kwargs={'ip': ip_tag.ip_network})
+    expected_url = reverse('iptags:ip-tags-json', kwargs={'ip': ip_tag.ip_network})
+    url = reverse('iptags:ip-tags-json', kwargs={'ip': ip_tag.ip_network})
     response = JsonResponse([ip_tag.tag], safe=False)
 
     assert response.status_code == status.HTTP_200_OK

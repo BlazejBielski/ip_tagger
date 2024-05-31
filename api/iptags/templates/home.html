@@ -1,0 +1,22 @@
+{% extends "navbar.html" %}
+
+{% block title %}Home - IP Tag Report{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">IP Tag Report</h1>
+    <form id="ip-form" class="form-inline mt-3">
+        <label class="sr-only" for="ip">IP Address</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="ip" placeholder="Enter IP Address" required>
+        <button type="submit" class="btn btn-primary mb-2">Get Report</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('ip-form').onsubmit = function(event) {
+        event.preventDefault();
+        var ip = document.getElementById('ip').value;
+        window.location.href = '{% url "iptags:ip-tags-report" "dummy" %}'.replace("dummy", ip);
+    };
+</script>
+{% endblock %}

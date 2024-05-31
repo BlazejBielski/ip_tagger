@@ -1,18 +1,16 @@
 from django.urls import path
 
-from .views import IpTagView, IpTagReportView, IPTagListView, IPTagCreateView, IPTagUpdateView, IPTagDeleteView, \
-    IPTagRetrieveAPIView
+from .views import IpTagView, IpTagReportView, HomePageView, IpTagListCreateAPIView, IpTagRetrieveUpdateDestroyAPIView
 
 app_name = 'iptags'
 
 
 urlpatterns = [
-    path('ip-tags/<str:ip>/', IpTagView.as_view(), name='ip-tags'),
+    path('', HomePageView.as_view(), name='home'),
+    path('ip-tags-json/<str:ip>/', IpTagView.as_view(), name='ip-tags-json'),
     path('ip-tags-report/<str:ip>/', IpTagReportView.as_view(), name='ip-tags-report'),
-    path('ip-tags/list/', IPTagListView.as_view(), name='ip-tags-list'),
-    path('ip-tags/create/', IPTagCreateView.as_view(), name='ip-tags-create'),
-    path('ip-tags/update/<int:id>/', IPTagUpdateView.as_view(), name='ip-tags-update'),
-    path('ip-tags/delete/<int:id>/', IPTagDeleteView.as_view(), name='ip-tags-delete'),
-    path('ip-tags/retrive/<int:id>/', IPTagRetrieveAPIView.as_view(), name='ip-tags-retrieve'),
+
+    path('ip-tags/', IpTagListCreateAPIView.as_view(), name='iptag-list-create'),
+    path('ip-tags/<int:pk>/', IpTagRetrieveUpdateDestroyAPIView.as_view(), name='iptag-retrieve-update-destroy'),
 
 ]
