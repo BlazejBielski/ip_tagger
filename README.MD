@@ -21,15 +21,16 @@ Baza wiedzy – po odczytaniu i deserializacji – jest listą (obiektem typu li
 {"tag": WARTOŚĆ, "ip_network": WARTOŚĆ}
 
 ## Warstwa reprezentacyjna
-
+Warstwa prezentacyjna projektu jest stworzona na bazie:
+* Django Template
+* HTML
+* Bootstrap
 
 ## Użyty stack technologiczny.
 * python
 * django
 * drf
 * pytest
-* django template
-* HTML
 * docker
 
 ## Diagram klas
@@ -69,6 +70,7 @@ Uwaga — serwis przy starcie zasila bazę danych z bazy wiedzy, może to potrwa
 Serwis wystartuje pod adresem 127.0.0.1:8000.
 
 ## Testy jednostkowe
+Testy jednostkowe obejmują podstawowe testy modeli, serializerów i widoków
 Uruchomienie testów jest możliwe tylko po wystartowaniu projektu.
 1. Wewnątrz kontenera:
 - uruchamiamy powłokę kontenera komendą
