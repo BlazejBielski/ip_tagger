@@ -14,8 +14,10 @@ class Command(BaseCommand):
     help = 'Load data into the database'
 
     def handle(self, *args, **options):
+        self.stdout.write("Read data from knowledge base")
         data_file = settings.IP_TAG_BASE
         with open(data_file, 'r') as f:
+            self.stdout.write("Process data from knowledge base")
             data = json.load(f)
 
         ip_tag_mapping = {}
@@ -32,6 +34,7 @@ class Command(BaseCommand):
 
         new_ip_tags = []
         with transaction.atomic():
+            self.stdout.write("Load data from knowledge base")
             for ip, tags in ip_tag_mapping.items():
                 if ip in existing_ip_dict:
                     ip_tag = existing_ip_dict[ip]
