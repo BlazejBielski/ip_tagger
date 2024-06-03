@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import IpTagList from './components/IpTagList';
+import IpTagCreate from './components/IpTagCreate';
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <a className="nav-link" href="/list">List</a>
-
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/create">Create</a>
                 </li>
               </ul>
             </div>
@@ -21,6 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<IpTagList />} />
               <Route path="/list" element={<IpTagList />} />
+              <Route path="/create" element={<IpTagCreate />} />
             </Routes>
           </div>
         </div>

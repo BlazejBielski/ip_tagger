@@ -4,17 +4,40 @@ import axios from 'axios';
 
 const IpTagList = () => {
     const [ipTags, setIpTags] = useState([]);
+    const [nextUrl, setNextUrl] = useState(null);
+    const [prevUrl, setPrevUrl] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
 
-    useEffect(() => {
-        axios.get('http://localhost:8000/api/v1/ip-tags/')
-            .then(response => {
-                console.log('API Response:', response.data); // Dodaj to, aby zobaczyć dane w konsoli
-                setIpTags(response.data);
-            })
+    const fetchIpTags = (url = 'http://localhost:8000/api/v1/ip-tags/') => {
+        axios.get(url)
+        .then(response => {
+            setIpTags(response.data.results);
+            setNextUrl(response.data.next);
+            setPrevUrl(response.data.previous);
+        })
             .catch(error => {
                 console.error('There was an error fetching the IP tags!', error);
             });
+    }
+
+
+    useEffect(() => {
+        fetchIpTags();
     }, []);
+
+    const handleNextPage = () => {
+        if (nextUrl) {
+            setCurrentPage(currentPage + 1);
+            fetchIpTags(nextUrl);
+        }
+    };
+
+    const handlePrevPage = () => {
+        if (prevUrl) {
+            setCurrentPage(currentPage - 1);
+            fetchIpTags(prevUrl);
+        }
+    };
 
     return (
         <div>
@@ -26,6 +49,11 @@ const IpTagList = () => {
                     </li>
                 ))}
             </ul>
+            <div className="pagination">
+                <button onClick={handlePrevPage} disabled={!prevUrl}>Previous</button>
+                <span>Page {currentPage}</span>
+                <button onClick={handleNextPage} disabled={!nextUrl}>Next</button>
+            </div>
         </div>
     );
 };
