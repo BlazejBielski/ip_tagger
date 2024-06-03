@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import IpTagList from './components/IpTagList';
 
 function App() {
@@ -18,11 +18,14 @@ function App() {
             </div>
           </nav>
           <div className="container mt-4">
-            <Switch>
-              <Route path="/" exact component="{IpTagList}" />
-            </Switch>
+            <Routes>
+              <Route path="/" element={<IpTagList />} />
+              <Route path="/list" element={<IpTagList />} />
+            </Routes>
           </div>
         </div>
       </Router>
   );
 }
+
+export default App

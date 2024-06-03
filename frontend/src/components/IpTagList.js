@@ -6,8 +6,9 @@ const IpTagList = () => {
     const [ipTags, setIpTags] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/ip-tags')
+        axios.get('http://localhost:8000/api/v1/ip-tags/')
             .then(response => {
+                console.log('API Response:', response.data); // Dodaj to, aby zobaczyć dane w konsoli
                 setIpTags(response.data);
             })
             .catch(error => {
