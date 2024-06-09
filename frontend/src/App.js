@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import IpTagList from './components/IpTagList';
 import IpTagCreate from './components/IpTagCreate';
+import IpTagUpdate from './components/IpTagUpdate';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/" element={<IpTagList />} />
               <Route path="/list" element={<IpTagList />} />
               <Route path="/create" element={<IpTagCreate />} />
+              <Route path="/update/:pk" element={<IpTagUpdate />} />
             </Routes>
           </div>
         </div>
