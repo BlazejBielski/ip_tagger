@@ -117,3 +117,4 @@ class IpTagRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = IpTag.objects.all()
     serializer_class = IPNetworkTagSerializer
+    lookup_field = 'pk'
