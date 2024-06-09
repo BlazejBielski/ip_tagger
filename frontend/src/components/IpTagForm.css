@@ -1,0 +1,31 @@
+/* src/components/IpTagForm.css */
+.ip-tag-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ip-tag-form .form-group {
+    margin-bottom: 15px;
+}
+
+.ip-tag-form label {
+    font-weight: bold;
+    color: #495057;
+}
+
+.ip-tag-form .form-control {
+    border-radius: 4px;
+}
+
+.ip-tag-form .btn {
+    width: 100%;
+}
+
+.message {
+    color: #dc3545;
+    font-weight: bold;
+}
