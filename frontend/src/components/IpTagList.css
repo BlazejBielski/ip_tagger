@@ -1,0 +1,82 @@
+/* src/components/IpTagList.css */
+.ip-tag-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.filter-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.ip-tag-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.ip-tag-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.ip-tag-details {
+    font-size: 16px;
+    color: #495057;
+}
+
+.ip-tag-actions .btn {
+    margin-left: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination .btn {
+    margin: 0 10px;
+}
+
+.message {
+    text-align: center;
+    color: #dc3545;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+/* src/App.css */
+.nav-link {
+  color: #000 !important; /* Ensure the text color is visible */
+  font-weight: bold; /* Make the text bold */
+  margin-right: 15px; /* Add some space between the links */
+}
+
+.nav-link:hover {
+  color: #007bff !important; /* Change color on hover for better visibility */
+}

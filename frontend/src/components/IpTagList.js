@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import {Link} from "react-router-dom";
+import './IpTagList.css';
 
 
 const IpTagList = () => {
@@ -63,29 +64,34 @@ const IpTagList = () => {
     );
 
     return (
-        <div>
-            <h1>IP Tag List</h1>
+        <div className="ip-tag-list-container">
+            <h1 className="title">IP Tag List</h1>
             <input
                 type="text"
                 value={filter}
                 onChange={handleFilterChange}
                 placeholder="Filter by IP network or tag"
+                className="filter-input"
                 />
-            <ul>
+            <ul className="ip-tag-list">
                 {filteredIpTags.map(ipTag => (
-                    <li key={ipTag.id}>
-                        {ipTag.ip_network} - {ipTag.tag}
-                        <Link to={`/update/${ipTag.id}`}><button>Update</button></Link>
-                        <button onClick={() => handleDelete(ipTag.id)}>Delete</button>
+                    <li key={ipTag.id} className="ip-tag-item">
+                        <span className="ip-tag-details">{ipTag.ip_network} - {ipTag.tag}</span>
+                        <div className="ip-tag-actions">
+                                <Link to={`/update/${ipTag.id}`}>
+                                    <button className="btn btn-primary">Update</button>
+                                </Link>
+                            <button className="btn btn-danger" onClick={() => handleDelete(ipTag.id)}>Delete</button>
+                            </div>
                     </li>
-                ))}
+                    ))}
             </ul>
             <div className="pagination">
-                <button onClick={handlePrevPage} disabled={!prevUrl}>Previous</button>
-                <span>Page {currentPage}</span>
-                <button onClick={handleNextPage} disabled={!nextUrl}>Next</button>
+                <button onClick={handlePrevPage} disabled={!prevUrl} className="btn btn-secondary">Previous</button>
+                <span className="current-page">Page {currentPage}</span>
+                <button onClick={handleNextPage} disabled={!nextUrl} className="btn btn-secondary">Next</button>
             </div>
-            {message && <p>{message}</p>}
+            {message && <p className="message">{message}</p>}
         </div>
     );
 };
