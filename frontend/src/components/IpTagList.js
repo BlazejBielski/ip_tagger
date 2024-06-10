@@ -10,7 +10,6 @@ const IpTagList = () => {
     const [prevUrl, setPrevUrl] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [filter, setFilter] = useState('');
-    const [message, setMessage] = useState('');
 
     const fetchIpTags = (url = 'http://localhost:8000/api/v1/ip-tags/') => {
         axios.get(url)
@@ -91,7 +90,6 @@ const IpTagList = () => {
                 <span className="current-page">Page {currentPage}</span>
                 <button onClick={handleNextPage} disabled={!nextUrl} className="btn btn-secondary">Next</button>
             </div>
-            {message && <p className="message">{message}</p>}
         </div>
     );
 };
