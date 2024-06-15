@@ -1,4 +1,4 @@
-# IP Management
+# IP Tagger
 
 ## Główne wymagania funkcjonalne.
 Utworzenie API dla dwóch endpointów:
