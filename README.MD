@@ -35,6 +35,7 @@ Warstwa prezentacyjna projektu jest stworzona na bazie:
 * pytest
 * docker
 * React
+* postgresql
 
 ## Diagram klas
 ![Diagram klas](diagram_klas.png)
