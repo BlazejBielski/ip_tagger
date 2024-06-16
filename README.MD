@@ -1,8 +1,8 @@
-# IP Management
+# IP Tagger
 
 ## Główne wymagania funkcjonalne.
 Utworzenie API dla dwóch endpointów:
-1. GET /ip-tags/{ip}
+1. GET /ip-tags-json/{ip}
 Ten endpoint, w odpowiedzi na żądanie klienta, powinien zwracać dokument w formacie JSON, zawierający
 listę tagów, które odpowiadają danemu adresowi IP (lub pustą listę, jeśli adresowi nie odpowiada żaden tag;
 2. GET /ip-tags-report/{ip}
@@ -10,7 +10,8 @@ Ten endpoint, w odpowiedzi na żądanie klienta, powinien zwracać dokument w fo
 zawierający tabelę prezentującą tagi, które odpowiadają danemu adresowi IP – np.:
 Adres IP Pasujące tagi
 198.51.100.227 just a TAG
-3. Utworzenie API do obsługi Create, Read, Update, Destroy
+3. Utworzenie API do obsługi Create, Read, Update, Destroy.
+4. Utworzenie warstwy frontend do obsługi API.
 
 ## Baza wiedzy i logika dopasowywania tagów do adresów IP.
 Baza wiedzy powinna zostać odczytana podczas inicjalizacji usługi z pliku w formacie JSON. Ścieżkę do
@@ -25,6 +26,7 @@ Warstwa prezentacyjna projektu jest stworzona na bazie:
 * Django Template
 * HTML
 * Bootstrap
+* React
 
 ## Użyty stack technologiczny.
 * python
@@ -32,6 +34,8 @@ Warstwa prezentacyjna projektu jest stworzona na bazie:
 * drf
 * pytest
 * docker
+* React
+* postgresql
 
 ## Diagram klas
 ![Diagram klas](diagram_klas.png)
@@ -67,8 +71,15 @@ DB_CONNECTION_STRING=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES
 docker compose up
 ```
 Uwaga — serwis przy starcie zasila bazę danych z bazy wiedzy, może to potrwać do kilku minut.
-Serwis wystartuje pod adresem 127.0.0.1:8000.
+Serwis API i dwa pierwsze punkty z funkcjonalności wystartują pod adresem 127.0.0.1:8000.
 
+## Uruchomienie frontendu.
+Upewniamy się, że jesteśmy w katalogu frontend.
+Uruchamiamy komendą 
+```bash
+npm start
+
+```
 ## Testy jednostkowe
 Testy jednostkowe obejmują podstawowe testy modeli, serializerów i widoków
 Uruchomienie testów jest możliwe tylko po wystartowaniu projektu.
