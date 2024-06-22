@@ -8,6 +8,4 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
-
 CMD ["sh", "-c", "npm install -g serve && serve -s build"]
